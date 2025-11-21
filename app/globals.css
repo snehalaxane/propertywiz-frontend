@@ -1,11 +1,15 @@
-@import "tailwindcss";
+/* @import "tailwindcss";
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #ffffff;     
+  --foreground: #000000;      
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
 }
 
-@theme inline {
+
+@theme inline {x
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -14,7 +18,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #fff;
     --foreground: #ededed;
   }
 }
@@ -23,4 +27,26 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+} */
+
+
+
+@import "tailwindcss";
+
+/* Light Mode */
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+}
+
+/* Dark Mode */
+.dark {
+  --background: #000000;
+  --foreground: #ffffff;
+}
+
+/* Apply to the whole page */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
 }
