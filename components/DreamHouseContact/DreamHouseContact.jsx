@@ -348,7 +348,7 @@ export default function BuildingAuditContact() {
         </p>
 
         <button
-          className="px-8 py-4 rounded-full bg-[#2d7db5] hover:bg-blue-700 text-white 
+          className="px-8 py-4 rounded-full bg-blue-700 hover:bg-blue-900 text-white 
                      font-semibold text-lg transition duration-300 shadow-lg"
         >
           Book a Free Audit Consultation
@@ -357,3 +357,5 @@ export default function BuildingAuditContact() {
     </section>
   );
 }
+
+

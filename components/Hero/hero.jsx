@@ -323,56 +323,430 @@
 // }
 
 
-export default function HeroSection() {
-  return (
-    <section className="relative w-full h-[90vh] flex items-center justify-center text-white overflow-hidden">
+// "use client";
+// import { motion } from "framer-motion";
+
+// export default function HeroSection() {
+//   return (
+//     <section className="relative w-full h-[90vh] flex items-center justify-center text-white overflow-hidden">
       
-      {/* Background Image */}
-      <img
-        src="/real-estate-hero.jpg"   // your existing image
-        alt="Property Audit"
-        className="absolute inset-0 w-full h-full object-cover"
-      />
+//       {/* Background Image with floating animation */}
+//       <motion.img
+//         src="/real-estate-hero.jpg"
+//         alt="Property Audit"
+//         className="absolute inset-0 w-full h-full object-cover"
+//         animate={{ scale: [1, 1.05, 1], y: [0, -10, 0] }}
+//         transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+//       />
 
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/60"></div>
+//       {/* Dark Overlay */}
+//       <div className="absolute inset-0 bg-black/60"></div>
 
-      {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-3xl">
+//       {/* Content */}
+//       <div className="relative z-10 text-center px-6 max-w-3xl">
+//         <p className="text-lg md:text-xl mb-3 font-light tracking-wider text-blue-300">
+//           360° Property Due Diligence
+//         </p>
 
-        {/* Small Tagline */}
-        <p className="text-lg md:text-xl mb-3 font-light tracking-wider text-blue-300">
-          360° Property Due Diligence
-        </p>
+//         <motion.h1
+//           className="text-4xl md:text-6xl font-bold leading-tight mb-6"
+//           initial={{ opacity: 0, y: -20 }}
+//           animate={{ opacity: 1, y: 0 }}
+//           transition={{ duration: 1 }}
+//         >
+//           Audit Your Property Before You Invest
+//         </motion.h1>
 
-        {/* Main Heading */}
-        <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
-          Audit Your Property Before You Invest
-        </h1>
+//         <motion.p
+//           className="text-lg md:text-xl mb-8 text-gray-200"
+//           initial={{ opacity: 0, y: 20 }}
+//           animate={{ opacity: 1, y: 0 }}
+//           transition={{ duration: 1, delay: 0.3 }}
+//         >
+//           Identify hidden risks, verify legality, and get an unbiased audit report 
+//           before making your biggest financial decision.
+//         </motion.p>
 
-        {/* Subtext */}
-        <p className="text-lg md:text-xl mb-8 text-gray-200">
-          Identify hidden risks, verify legality, and get an unbiased audit report 
-          before making your biggest financial decision.
-        </p>
+//         <motion.div
+//           className="flex flex-col md:flex-row justify-center gap-4"
+//           initial={{ opacity: 0 }}
+//           animate={{ opacity: 1 }}
+//           transition={{ duration: 1, delay: 0.6 }}
+//         >
+//           <button className="bg-blue-600 hover:bg-blue-700 px-8 py-4 text-lg font-semibold rounded-full shadow-lg transition transform hover:scale-105">
+//             Get a Property Audit
+//           </button>
 
-        {/* CTA Buttons */}
-        <div className="flex flex-col md:flex-row justify-center gap-4">
-          <button className="bg-blue-600 hover:bg-blue-700 px-8 py-4 text-lg font-semibold rounded-full shadow-lg transition">
-            Get a Property Audit
-          </button>
+//           <button className="bg-white/20 hover:bg-white/30 px-8 py-4 text-lg font-semibold rounded-full backdrop-blur-lg border border-white/40 transition transform hover:scale-105">
+//             Download Sample Report
+//           </button>
+//         </motion.div>
 
-          <button className="bg-white/20 hover:bg-white/30 px-8 py-4 text-lg font-semibold rounded-full backdrop-blur-lg border border-white/40 transition">
-            Download Sample Report
-          </button>
-        </div>
+//         <motion.p
+//           className="mt-6 text-sm text-gray-300 tracking-wider"
+//           initial={{ opacity: 0 }}
+//           animate={{ opacity: 1 }}
+//           transition={{ duration: 1, delay: 0.9 }}
+//         >
+//           Trusted by home buyers, investors & NRI clients
+//         </motion.p>
+//       </div>
+//     </section>
+//   );
+// }
 
-        {/* Optional small trust text */}
-        <p className="mt-6 text-sm text-gray-300 tracking-wider">
-          Trusted by home buyers, investors & NRI clients
-        </p>
 
-      </div>
-    </section>
-  );
+// "use client";
+// import { motion } from "framer-motion";
+// import React from 'react';
+
+// export default function HeroSection() {
+//     // Fallback image source for the hero background
+//     const heroImageUrl = "https://placehold.co/1920x1080/2C5282/ffffff?text=Modern+Real+Estate+Building";
+
+//     return (
+//         // Changed h-[90vh] to h-[calc(100vh-80px)] (assuming 80px header height) 
+//         // to ensure it fills the space below your external header, and added relative position
+//         <section className="relative w-full h-[calc(100vh-80px)] flex items-center justify-center text-white overflow-hidden font-inter">
+            
+//             {/* Background Image with floating animation */}
+//             <motion.img
+//                 src="/real-estate-hero.jpg"
+//                 alt="Property Audit"
+//                 className="absolute inset-0 w-full h-full object-cover"
+//                 onError={(e) => { e.target.onerror = null; e.target.src = heroImageUrl; }}
+//                 animate={{ scale: [1, 1.03, 1], y: [0, -8, 0] }}
+//                 transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+//             />
+
+//             {/* Dark Overlay with Gradient Fade */}
+//             <div className="absolute inset-0 bg-gray-900/80"></div>
+//             {/* Bottom Gradient Fade to anchor the content to the next section */}
+//             <div className="absolute bottom-0 inset-x-0 h-1/3 bg-gradient-to-t from-gray-50 via-gray-900/10 to-transparent"></div>
+            
+//             {/* === MAIN HERO CONTENT (Centered) === */}
+//             <div className="relative z-10 text-center px-6 max-w-3xl pt-16 pb-32">
+//                 <p className="text-lg md:text-xl mb-4 font-medium tracking-widest uppercase text-blue-400">
+//                     360° Property Due Diligence
+//                 </p>
+
+//                 <motion.h1
+//                     className="text-4xl md:text-6xl font-extrabold leading-tight mb-8 drop-shadow-lg"
+//                     initial={{ opacity: 0, y: -20 }}
+//                     animate={{ opacity: 1, y: 0 }}
+//                     transition={{ duration: 0.8, ease: "easeOut" }}
+//                 >
+//                     Audit Your Property Before You Invest
+//                 </motion.h1>
+
+//                 <motion.p
+//                     className="text-lg md:text-xl mb-10 text-gray-200 font-light max-w-xl mx-auto"
+//                     initial={{ opacity: 0, y: 20 }}
+//                     animate={{ opacity: 1, y: 0 }}
+//                     transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+//                 >
+//                     Identify hidden risks, verify legality, and get an unbiased audit report 
+//                     before making your biggest financial decision.
+//                 </motion.p>
+
+//                 <motion.div
+//                     className="flex flex-col sm:flex-row justify-center gap-4"
+//                     initial={{ opacity: 0 }}
+//                     animate={{ opacity: 1 }}
+//                     transition={{ duration: 0.8, delay: 0.6 }}
+//                 >
+//                     {/* Primary CTA: Solid, bold */}
+//                     <motion.button 
+//                         whileHover={{ scale: 1.05, boxShadow: "0 10px 20px rgba(37, 99, 235, 0.5)" }}
+//                         whileTap={{ scale: 0.95 }}
+//                         className="bg-blue-600 hover:bg-blue-700 px-8 py-4 text-lg font-bold rounded-full shadow-xl transition duration-300"
+//                     >
+//                         Get a Property Audit
+//                     </motion.button>
+
+//                     {/* Secondary CTA: Transparent, professional */}
+//                     <motion.button 
+//                         whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.3)" }}
+//                         whileTap={{ scale: 0.95 }}
+//                         className="bg-white/10 px-8 py-4 text-lg font-semibold rounded-full 
+//                                    backdrop-blur-md border border-white/30 transition duration-300"
+//                     >
+//                         Download Sample Report
+//                     </motion.button>
+//                 </motion.div>
+
+//                 <motion.p
+//                     className="mt-6 text-sm text-gray-300 tracking-wider font-medium"
+//                     initial={{ opacity: 0 }}
+//                     animate={{ opacity: 1 }}
+//                     transition={{ duration: 0.8, delay: 0.9 }}
+//                 >
+//                     Trusted by home buyers, investors & NRI clients
+//                 </motion.p>
+//             </div>
+//         </section>
+//     );
+// }
+
+// "use client";
+// import { motion } from "framer-motion";
+// import React from 'react';
+
+// export default function HeroSection() {
+//     // Fallback image source for the hero background
+//     const heroImageUrl = "https://placehold.co/1920x1080/2C5282/ffffff?text=Modern+Real+Estate+Building";
+
+//     return (
+//         // Set height dynamically (e.g., using a smaller calculation for the viewport height)
+//         // Adjusting h-[calc(100vh-64px)] assuming your header height is 64px (h-16) for a clean look.
+//         <section className="relative w-full h-[calc(100vh-64px)] flex items-center justify-center text-white overflow-hidden font-inter">
+            
+//             {/* Background Image with smooth floating animation */}
+//             <motion.img
+//                 src="/real-estate-hero.jpg"
+//                 alt="Property Audit"
+//                 className="absolute inset-0 w-full h-full object-cover"
+//                 onError={(e) => { e.target.onerror = null; e.target.src = heroImageUrl; }}
+//                 animate={{ scale: [1, 1.05, 1], y: [0, -10, 0] }} // Increased movement slightly for visual interest
+//                 transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+//             />
+
+//             {/* Dark Overlay (More pronounced for contrast) */}
+//             <div className="absolute inset-0 bg-gray-900/85"></div>
+//             {/* Bottom Gradient Fade (Subtle fade to white/light gray of next section) */}
+//             <div className="absolute bottom-0 inset-x-0 h-1/3 bg-gradient-to-t from-gray-50/10 via-gray-900/50 to-transparent"></div>
+            
+//             {/* === MAIN HERO CONTENT (Centered and responsive) === */}
+//             <div className="relative z-10 text-center px-6 max-w-4xl py-20"> {/* Increased max-width */}
+                
+//                 {/* Pre-Header Text */}
+//                 <p className="text-base md:text-lg mb-4 font-semibold tracking-widest uppercase text-blue-300">
+//                     360° Property Due Diligence
+//                 </p>
+
+//                 <motion.h1
+//                     // Title: Ultra-bold for max impact
+//                     className="text-5xl md:text-7xl font-extrabold leading-tight mb-8 drop-shadow-xl"
+//                     initial={{ opacity: 0, y: -20 }}
+//                     animate={{ opacity: 1, y: 0 }}
+//                     transition={{ duration: 0.9, ease: "easeOut" }}
+//                 >
+//                     Audit Your Property Before You Invest
+//                 </motion.h1>
+
+//                 <motion.p
+//                     className="text-xl md:text-2xl mb-12 text-gray-200 font-light max-w-2xl mx-auto"
+//                     initial={{ opacity: 0, y: 20 }}
+//                     animate={{ opacity: 1, y: 0 }}
+//                     transition={{ duration: 0.9, delay: 0.3, ease: "easeOut" }}
+//                 >
+//                     Identify hidden risks, verify legality, and get an unbiased audit report 
+//                     before making your biggest financial decision.
+//                 </motion.p>
+
+//                 <motion.div
+//                     className="flex flex-col sm:flex-row justify-center gap-4"
+//                     initial={{ opacity: 0 }}
+//                     animate={{ opacity: 1 }}
+//                     transition={{ duration: 0.9, delay: 0.6 }}
+//                 >
+//                     {/* Primary CTA (Matched Header Button Style) */}
+//                     <motion.button 
+//                         whileHover={{ scale: 1.05, boxShadow: "0 15px 30px rgba(37, 99, 235, 0.6)" }}
+//                         whileTap={{ scale: 0.95 }}
+//                         className="bg-blue-600 hover:bg-blue-700 px-8 py-4 text-lg font-bold rounded-full 
+//                                    shadow-2xl transition duration-300 active:scale-95 whitespace-nowrap"
+//                     >
+//                         Get a Property Audit
+//                     </motion.button>
+
+//                     {/* Secondary CTA (Matched Header Button Style) */}
+//                     <motion.button 
+//                         whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.3)" }}
+//                         whileTap={{ scale: 0.95 }}
+//                         className="bg-white/10 px-8 py-4 text-lg font-semibold rounded-full 
+//                                    backdrop-blur-md border border-white/30 transition duration-300 active:scale-95 whitespace-nowrap"
+//                     >
+//                         Download Sample Report
+//                     </motion.button>
+//                 </motion.div>
+
+//                 <motion.p
+//                     className="mt-8 text-sm text-gray-300 tracking-wider font-medium"
+//                     initial={{ opacity: 0 }}
+//                     animate={{ opacity: 1 }}
+//                     transition={{ duration: 0.9, delay: 0.9 }}
+//                 >
+//                     Trusted by home buyers, investors & NRI clients
+//                 </motion.p>
+//             </div>
+//         </section>
+//     );
+// }
+
+"use client";
+import { motion } from "framer-motion";
+import React from 'react';
+
+export default function HeroSection() {
+    // Fallback image source for the hero background
+    const heroImageUrl = "https://placehold.co/1920x1080/2C5282/ffffff?text=Modern+Real+Estate+Building";
+    
+    // Split the main heading into two distinct, animated parts
+    const headingParts = [
+        { text: "Audit Your Property", start: { x: "-100vw", y: "-20vh", rotate: -5 } }, // Top-Left Start
+        { text: "Before You Invest", start: { x: "100vw", y: "20vh", rotate: 5 } },      // Bottom-Right Start
+    ];
+
+    // Variants for the converging text effect
+    const convergenceVariants = {
+        hidden: ({ x, y, rotate }) => ({
+            opacity: 0,
+            x: x, // Custom starting X position (e.g., "-100vw")
+            y: y, // Custom starting Y position (e.g., "-20vh")
+            scale: 0.8,
+            rotate: rotate,
+        }),
+        visible: {
+            opacity: 1,
+            x: 0, // Animate to center (final position)
+            y: 0,
+            scale: 1,
+            rotate: 0,
+            transition: {
+                type: "spring",
+                stiffness: 70, // Gives a slight bounce effect
+                damping: 20,
+                duration: 1.5,
+                delay: 0.8, // Start slightly later than the subtitle
+            }
+        },
+    };
+
+    // Subtitle and Description animation (retains the smooth up-fade)
+    const subtitleVariants = {
+        hidden: { opacity: 0, y: 30 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut", delay: 0.2 } }
+    };
+
+    const descriptionVariants = {
+        hidden: { opacity: 0, y: 30 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut", delay: 0.4 } }
+    };
+    
+    // CTA and Footer animation
+    const fadeUpVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut", delay: 1.8 } }
+    };
+
+
+    return (
+        <section className="relative w-full h-[calc(100vh-64px)] flex items-center justify-center 
+                            bg-gray-900 overflow-hidden font-inter text-white">
+            
+            {/* === BACKGROUND IMAGE WITH CINEMATIC PANNING EFFECT === */}
+            <motion.img
+                src="/real-estate-hero.jpg"
+                alt="Property Audit"
+                // Ensure the image is wider than the container to allow panning
+                className="absolute top-0 left-0 h-full w-[120vw] min-w-[1920px] object-cover" 
+                onError={(e) => { e.target.onerror = null; e.target.src = heroImageUrl; }}
+                
+                // Continuous Right-to-Left Panning Animation (Unique effect)
+                animate={{ x: [0, -200] }}
+                transition={{ 
+                    duration: 40, 
+                    repeat: Infinity,
+                    repeatType: "reverse", 
+                    ease: "linear" 
+                }}
+            />
+
+            {/* Dark Overlay (More pronounced for contrast) */}
+            <div className="absolute inset-0 bg-gray-900/85"></div>
+            
+            {/* === MAIN HERO CONTENT (Centered and responsive) === */}
+            <div className="relative z-10 text-center px-6 max-w-4xl py-20"> 
+                
+                {/* 1. Pre-Header Text */}
+                <motion.p 
+                    className="text-base md:text-lg mb-4 font-semibold tracking-widest uppercase text-blue-300"
+                    initial="hidden"
+                    animate="visible"
+                    variants={subtitleVariants}
+                >
+                    360° Property Due Diligence
+                </motion.p>
+
+                {/* 2. CONVERGING MAIN HEADING CONTAINER */}
+                <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-8 drop-shadow-xl overflow-hidden h-40 md:h-48 flex flex-col justify-center items-center">
+                    
+                    {headingParts.map((part, index) => (
+                        // Each part is a separate motion element that animates from a corner
+                        <motion.span
+                            key={index}
+                            className="block" // Forces each part onto its own line
+                            custom={part.start} // Pass custom starting position
+                            initial="hidden"
+                            animate="visible"
+                            variants={convergenceVariants}
+                        >
+                            {part.text}
+                        </motion.span>
+                    ))}
+
+                </h1>
+
+                {/* 3. Description */}
+                <motion.p
+                    className="text-xl md:text-2xl mb-12 text-gray-200 font-light max-w-2xl mx-auto"
+                    initial="hidden"
+                    animate="visible"
+                    variants={descriptionVariants}
+                >
+                    Identify hidden risks, verify legality, and get an unbiased audit report 
+                    before making your biggest financial decision.
+                </motion.p>
+
+                {/* 4. CTA Buttons */}
+                <motion.div
+                    className="flex flex-col sm:flex-row justify-center gap-4"
+                    initial="hidden"
+                    animate="visible"
+                    variants={fadeUpVariants}
+                >
+                    {/* Primary CTA */}
+                    <motion.button 
+                        whileHover={{ scale: 1.05, boxShadow: "0 15px 30px rgba(37, 99, 235, 0.6)" }}
+                        whileTap={{ scale: 0.95 }}
+                        className="bg-blue-600 hover:bg-blue-700 px-8 py-4 text-lg font-bold rounded-full 
+                                   shadow-2xl transition duration-300 active:scale-95 whitespace-nowrap"
+                    >
+                        Get a Property Audit
+                    </motion.button>
+
+                    {/* Secondary CTA */}
+                    <motion.button 
+                        whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.3)" }}
+                        whileTap={{ scale: 0.95 }}
+                        className="bg-white/10 px-8 py-4 text-lg font-semibold rounded-full 
+                                   backdrop-blur-md border border-white/30 transition duration-300 active:scale-95 whitespace-nowrap"
+                    >
+                        Download Sample Report
+                    </motion.button>
+                </motion.div>
+
+                {/* 5. Footer Text */}
+                <motion.p
+                    className="mt-8 text-sm text-gray-400 tracking-wider font-medium"
+                    initial="hidden"
+                    animate="visible"
+                    variants={fadeUpVariants} // Reusing fadeUp for footer
+                >
+                    Trusted by home buyers, investors & NRI clients
+                </motion.p>
+            </div>
+        </section>
+    );
 }

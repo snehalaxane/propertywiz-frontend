@@ -65,43 +65,27 @@
 // }
 
 
-import Header from "@/components/Header/header";
 import Hero from "@/components/Hero/hero"
-import ServiceShowcase from "@/components/ServiceShowcase/serviceShowcase";
 import DreamHouseContact from "@/components/DreamHouseContact/DreamHouseContact";
-import RealEstatePromo from "@/components/RealEstatePromo/RealEstatePromo";
-import Footer from "@/components/Footer/footer";
-import PropertyTypeShowcase from "@/components/PropertyTypeShowcase/PropertyTypeShowcase";
-import FeaturedProperties from "@/components/FeaturedProperties/FeaturedProperties";
 import Testimonials from "@/components/Testimonials/testimonials"
 import HiddenRisksSection from "@/components/HiddenRisksSection/HiddenRisksSection"
 import AuditSolutionSection from "@/components/AuditSolutionSection/AuditSolutionSection"
 import TwoPillarVerification from "@/components/TwoPillarVerification/TwoPillarVerification"
 import PropertyCoverageSection from "@/components/PropertyCoverageSection/PropertyCoverageSection"
-import FinalReportSection from "@/components/FinalReportSection/FinalReportSection"
 import AuditProcessSection from "@/components/AuditProcessSection/AuditProcessSection"
+
 
 export default function HomePage() {
   return (
     <>
-      <Header />
       <Hero />
       <HiddenRisksSection />
       <AuditSolutionSection />
       <TwoPillarVerification />
       <PropertyCoverageSection />
-      {/* <FinalReportSection /> */}
       <AuditProcessSection />
        <Testimonials /> 
       <DreamHouseContact />
-      <Footer />
-      {/* {/* {/* <FeaturedProperties /> */}
-      {/* <ServiceShowcase />
-      <PropertyTypeShowcase />
-      <RealEstatePromo /> */}
-     
-       
-      
     </>
   );
 }

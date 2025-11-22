@@ -34,8 +34,11 @@
 // }
 
 
+// app/layout.tsx
 import "./globals.css";
 import type { ReactNode } from "react";
+import Header from "@/components/Header/header";
+import Footer from "@/components/Footer/footer";
 
 export const metadata = {
   title: "My App",
@@ -44,8 +47,18 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="flex flex-col min-h-screen">
+        {/* Header always visible */}
+        <Header />
+
+        {/* Main content */}
+        <main className="flex-1">{children}</main>
+
+        {/* Footer always visible */}
+        <Footer />
+      </body>
     </html>
   );
 }
+
 
