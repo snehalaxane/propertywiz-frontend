@@ -2,7 +2,6 @@
 export default function BuildingAuditContact() {
   return (
     <section className="relative w-full h-[600px] flex items-center justify-start">
-      
       {/* Background Image */}
       <img
         src="/modern-building.png"
@@ -20,8 +19,9 @@ export default function BuildingAuditContact() {
         </h2>
 
         <p className="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed drop-shadow-lg">
-          Ensure your building is safe and compliant. Our experts conduct thorough audits 
-          and provide detailed reports to help you maintain structural integrity and safety standards.
+          Ensure your building is safe and compliant. Our experts conduct
+          thorough audits and provide detailed reports to help you maintain
+          structural integrity and safety standards.
         </p>
 
         <button
@@ -34,5 +34,3 @@ export default function BuildingAuditContact() {
     </section>
   );
 }
-
-

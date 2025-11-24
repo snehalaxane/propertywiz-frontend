@@ -5,7 +5,7 @@
 // export default function HeroSection() {
 //     // Fallback image source for the hero background
 //     const heroImageUrl = "https://placehold.co/1920x1080/2C5282/ffffff?text=Modern+Real+Estate+Building";
-    
+
 //     // Split the main heading into two distinct, animated parts
 //     const headingParts = [
 //         { text: "Audit Your Property", start: { x: "-100vw", y: "-20vh", rotate: -5 } }, // Top-Left Start
@@ -47,44 +47,43 @@
 //         hidden: { opacity: 0, y: 30 },
 //         visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut", delay: 0.4 } }
 //     };
-    
+
 //     // CTA and Footer animation
 //     const fadeUpVariants = {
 //         hidden: { opacity: 0, y: 20 },
 //         visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut", delay: 1.8 } }
 //     };
 
-
 //     return (
-//         <section className="relative w-full h-[calc(100vh-64px)] flex items-center justify-center 
+//         <section className="relative w-full h-[calc(100vh-64px)] flex items-center justify-center
 //                             bg-gray-900 overflow-hidden font-inter text-white">
-            
+
 //             {/* === BACKGROUND IMAGE WITH CINEMATIC PANNING EFFECT === */}
 //             <motion.img
 //                 src="/real-estate-hero.jpg"
 //                 alt="Property Audit"
 //                 // Ensure the image is wider than the container to allow panning
-//                 className="absolute top-0 left-0 h-full w-[120vw] min-w-[1920px] object-cover" 
+//                 className="absolute top-0 left-0 h-full w-[120vw] min-w-[1920px] object-cover"
 //                 onError={(e) => { e.target.onerror = null; e.target.src = heroImageUrl; }}
-                
+
 //                 // Continuous Right-to-Left Panning Animation (Unique effect)
 //                 animate={{ x: [0, -200] }}
-//                 transition={{ 
-//                     duration: 40, 
+//                 transition={{
+//                     duration: 40,
 //                     repeat: Infinity,
-//                     repeatType: "reverse", 
-//                     ease: "linear" 
+//                     repeatType: "reverse",
+//                     ease: "linear"
 //                 }}
 //             />
 
 //             {/* Dark Overlay (More pronounced for contrast) */}
 //             <div className="absolute inset-0 bg-gray-900/85"></div>
-            
+
 //             {/* === MAIN HERO CONTENT (Centered and responsive) === */}
-//             <div className="relative z-10 text-center px-6 max-w-4xl py-20"> 
-                
+//             <div className="relative z-10 text-center px-6 max-w-4xl py-20">
+
 //                 {/* 1. Pre-Header Text */}
-//                 <motion.p 
+//                 <motion.p
 //                     className="text-base md:text-lg mb-4 font-semibold tracking-widest uppercase text-blue-300"
 //                     initial="hidden"
 //                     animate="visible"
@@ -95,7 +94,7 @@
 
 //                 {/* 2. CONVERGING MAIN HEADING CONTAINER */}
 //                 <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-8 drop-shadow-xl overflow-hidden h-40 md:h-48 flex flex-col justify-center items-center">
-                    
+
 //                     {headingParts.map((part, index) => (
 //                         // Each part is a separate motion element that animates from a corner
 //                         <motion.span
@@ -119,7 +118,7 @@
 //                     animate="visible"
 //                     variants={descriptionVariants}
 //                 >
-//                     Identify hidden risks, verify legality, and get an unbiased audit report 
+//                     Identify hidden risks, verify legality, and get an unbiased audit report
 //                     before making your biggest financial decision.
 //                 </motion.p>
 
@@ -131,20 +130,20 @@
 //                     variants={fadeUpVariants}
 //                 >
 //                     {/* Primary CTA */}
-//                     <motion.button 
+//                     <motion.button
 //                         whileHover={{ scale: 1.05, boxShadow: "0 15px 30px rgba(37, 99, 235, 0.6)" }}
 //                         whileTap={{ scale: 0.95 }}
-//                         className="bg-blue-600 hover:bg-blue-700 px-8 py-4 text-lg font-bold rounded-full 
+//                         className="bg-blue-600 hover:bg-blue-700 px-8 py-4 text-lg font-bold rounded-full
 //                                    shadow-2xl transition duration-300 active:scale-95 whitespace-nowrap"
 //                     >
 //                         Get a Property Audit
 //                     </motion.button>
 
 //                     {/* Secondary CTA */}
-//                     <motion.button 
+//                     <motion.button
 //                         whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.3)" }}
 //                         whileTap={{ scale: 0.95 }}
-//                         className="bg-white/10 px-8 py-4 text-lg font-semibold rounded-full 
+//                         className="bg-white/10 px-8 py-4 text-lg font-semibold rounded-full
 //                                    backdrop-blur-md border border-white/30 transition duration-300 active:scale-95 whitespace-nowrap"
 //                     >
 //                         Download Sample Report
@@ -165,9 +164,6 @@
 //     );
 // }
 
-
-
-
 "use client";
 import { motion } from "framer-motion";
 import React from "react";
@@ -177,7 +173,10 @@ export default function HeroSection() {
     "https://placehold.co/1920x1080/2C5282/ffffff?text=Modern+Real+Estate+Building";
 
   const headingParts = [
-    { text: "Audit Your Property", start: { x: "-100vw", y: "-20vh", rotate: -5 } },
+    {
+      text: "Audit Your Property",
+      start: { x: "-100vw", y: "-20vh", rotate: -5 },
+    },
     { text: "Before You Invest", start: { x: "100vw", y: "20vh", rotate: 5 } },
   ];
 
@@ -207,17 +206,29 @@ export default function HeroSection() {
 
   const subtitleVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut", delay: 0.2 } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut", delay: 0.2 },
+    },
   };
 
   const descriptionVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut", delay: 0.4 } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut", delay: 0.4 },
+    },
   };
 
   const fadeUpVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut", delay: 1.8 } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut", delay: 1.8 },
+    },
   };
 
   return (
@@ -263,7 +274,7 @@ export default function HeroSection() {
           animate="visible"
           variants={subtitleVariants}
         >
-          360° Property Due Diligence
+          The 360° Property Health Check
         </motion.p>
 
         {/* HEADING RESPONSIVE FIX */}
@@ -303,8 +314,8 @@ export default function HeroSection() {
           animate="visible"
           variants={descriptionVariants}
         >
-          Identify hidden risks, verify legality, and get an unbiased audit report
-          before making your biggest financial decision.
+          Comprehensive Legal Verification + Technical Property Valuation. Buy
+          with 100% confidence
         </motion.p>
 
         {/* CTA Buttons */}
@@ -315,7 +326,10 @@ export default function HeroSection() {
           variants={fadeUpVariants}
         >
           <motion.button
-            whileHover={{ scale: 1.05, boxShadow: "0 15px 30px rgba(37, 99, 235, 0.6)" }}
+            whileHover={{
+              scale: 1.05,
+              boxShadow: "0 15px 30px rgba(37, 99, 235, 0.6)",
+            }}
             whileTap={{ scale: 0.95 }}
             className="
               bg-blue-600 hover:bg-blue-700 
@@ -330,7 +344,10 @@ export default function HeroSection() {
           </motion.button>
 
           <motion.button
-            whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.3)" }}
+            whileHover={{
+              scale: 1.05,
+              backgroundColor: "rgba(255, 255, 255, 0.3)",
+            }}
             whileTap={{ scale: 0.95 }}
             className="
               bg-white/10 

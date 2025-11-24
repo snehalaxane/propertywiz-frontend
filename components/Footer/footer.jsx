@@ -1,5 +1,10 @@
 "use client";
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaLinkedinIn,
+  FaInstagram,
+} from "react-icons/fa";
 export default function Footer() {
   return (
     <footer className="bg-[#0f172a] text-white px-6 py-10 md:px-15">
@@ -32,25 +37,38 @@ export default function Footer() {
 
         {/* Services */}
         <div>
-          <h3 className="text-lg font-semibold border-b border-gray-600 pb-2 mb-4">Services</h3>
+          <h3 className="text-lg font-semibold border-b border-gray-600 pb-2 mb-4">
+            Services
+          </h3>
           <ul className="space-y-2 text-sm text-gray-300">
-            {['Home', 'Services', 'Process', 'Report', 'Contact'].map((item) => (
-              <li key={item} className="hover:text-blue-500 cursor-pointer transition">{item}</li>
-            ))}
+            {["Home", "Services", "Process", "Solutions", "Contact"].map(
+              (item) => (
+                <li
+                  key={item}
+                  className="hover:text-blue-500 cursor-pointer transition"
+                >
+                  {item}
+                </li>
+              )
+            )}
           </ul>
         </div>
 
         {/* Company */}
         <div>
-          <h3 className="text-lg font-semibold border-b border-gray-600 pb-2 mb-4">Company</h3>
-           <p>Phone: 123-456-7890</p>
-        <p>Email: Propertywiz@mail.com</p>
-        <p>Address: 123 Hyderabad, Telangana, India</p>
+          <h3 className="text-lg font-semibold border-b border-gray-600 pb-2 mb-4">
+            Company
+          </h3>
+          <p>Phone: 9390885007</p>
+          <p>Email: Propertywiz@mail.com</p>
+          <p>Address: 123 Hyderabad, Telangana, India</p>
         </div>
 
         {/* Newsletter */}
         <div>
-          <h3 className="text-lg font-semibold border-b border-gray-600 pb-2 mb-4">Newsletter</h3>
+          <h3 className="text-lg font-semibold border-b border-gray-600 pb-2 mb-4">
+            Newsletter
+          </h3>
           <p className="text-sm text-gray-400 mb-4">
             Subscribe to our newsletter to get the latest news and updates!
           </p>
@@ -70,12 +88,7 @@ export default function Footer() {
       {/* Bottom Row */}
       <div className="pt-6 text-sm text-gray-400 flex flex-col md:flex-row justify-between items-center gap-4 flex-wrap text-center md:text-left">
         <p>© 2025 PropertyWiz. All Rights Reserved.</p>
-
-       
       </div>
     </footer>
   );
 }
-
-
-
